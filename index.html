@@ -4,9 +4,10 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/node_modules/angular-material/angular-material.css">
 </head>
-    <body ng-app="YourApp">
-    <div ng-controller="YourController">
+    <body ng-app="app">
+    <div ng-controller="myController">
          AngularJS app {{1+1}}
+		  {{message}}
     </div>
  
     <script src="/node_modules/angular/angular.js"></script> 
@@ -16,8 +17,12 @@
     <script src="/node_modules/angular-material/angular-material.js"></script> 
     <script>
         // Include app dependency on ngMaterial
-        angular.module( 'YourApp', [ 'ngMaterial', 'ngMessages', 'angular-animate' ] )
+        angular.module( 'app', [ 'ngMaterial', 'ngMessages', 'angular-animate' ] )
             .controller("YourController", YourController );
+			
+         app.controller('myController', function ($scope) {
+            $scope.message = "Hello World!";        
+        });
     </script> 
 </body>
 </html>
