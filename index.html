@@ -19,7 +19,7 @@
         // Include app dependency on ngMaterial
         angular.module( 'app', [ 'ngMaterial', 'ngMessages', 'angular-animate' ] )
             .controller("YourController", YourController );
-			
+		 var app = angular.module('app', []);	
          app.controller('myController', function ($scope) {
             $scope.message = "Hello World!";        
         });
