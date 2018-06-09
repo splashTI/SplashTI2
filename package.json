@@ -1,25 +1,21 @@
 {
   "name": "splashti2",
   "version": "1.0.0",
-  "description": "Java Application for running TM1 TI concurrently",
-  "main": "index.js",
-  "dependencies": {
-    "angular": "^1.6.10",
-    "angular-animate": "^1.6.10",
-    "angular-aria": "^1.6.10",
-    "angular-material": "^1.1.6",
-    "angular-messages": "^1.6.10"
-  },
-  "devDependencies": {},
+  "description": ".0)",
+  "main": "description: SplashTI2 is an application for running TI processes concurrently",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "live-server",
+    "test":"node index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/splashTI/splashTI2.git"
   },
-  "author": "Eugene Smyrnov",
-  "license": "ISC",
+  "keywords": [
+    "splashti2"
+  ],
+  "author": "IEVGENII SMYRNOV",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/splashTI/splashTI2/issues"
   },
