@@ -1,43 +1,92 @@
-<html lang="en" >
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Angular Material style sheet -->
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+    <title>SplashTI2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        
+        .navBardemoBasicUsage md-content .ext-content {
+        padding: 50px;
+        margin: 20px;
+        background-color: #FFF2E0; }
+    </style>
 </head>
+
 <body ng-app="SplashApp" ng-cloak>
-  <!--
+    <!--
     Your HTML content here
-  -->  
-  TEST {{1+1}}
-  <div ng-controller="MainController">
-   
-   <li> {{message}}</li>
-    <li>test</li>
+  -->
+    <!-- TEST {{1+1}} -->
+    <md-content class="md-padding" ng-controller="MainController" md-colors="{color: 'primary',background: 'orange-100-0.05'}" layout-fill>
+            <md-nav-bar md-no-ink-bar="disableInkBar" md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+                <md-nav-item md-nav-click="goto('Home')" name="Home">Home</md-nav-item>
+            <!-- <md-nav-item md-nav-click="goto('page2')" name="page2" ng-disabled="secondTabDisabled">
+                    Page Two
+                </md-nav-item>  -->
+                <md-nav-item md-nav-click="goto('Documentation')" name="Documentation" ng-disabled="true">Documentation</md-nav-item>
+                <md-nav-item md-nav-click="goto('Downloads')" name="Downloads" ng-disabled="true"> Downloads </md-nav-item>
 
-  </div>
-  <!-- Angular Material requires Angular.js Libraries -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+                <!-- these require actual routing with ui-router or ng-route, so they
+                        won't work in the demo
+                        <md-nav-item md-nav-href="#page4" name="page5">Page Four</md-nav-item>
+                        <md-nav-item md-nav-sref="app.page5" name="page4">Page Five</md-nav-item>
+                        You can also add options for the <code>ui-sref-opts</code> attribute.
+                        <md-nav-item md-nav-sref="page6" sref-opts="{reload:true, notify:true}">
+                          Page Six
+                        </md-nav-item>
+                        -->
+            </md-nav-bar>
+           <!-- <span>{{status}}</span> -->
+            <div class="ext-content" ng-show="currentNavItem=='Home'">
+             <!--  External content for 
+               <span>{{currentNavItem}}</span> -->
+                <h1 md-colors="{color:'accent-700'}"><span><!--<md-icon md-font-icon="settings">settings</md-icon>--><strong>SplashTI2</strong></span></h1>
+                <h4 md-colors="{color:'primary-400'}" class="md-accent">Application for running TI processes concurently</h4>
+                <p>Comming soon....</p> 
+            </div>
+          <!--  <div class="ext-content" ng-show="currentNavItem=='Documentation">    
+                    <p>Comming soon....d</p> 
+            </div>    -->
+            <!--<div class="ext-content" ng-show="currentNavItem=='Downloads'">
+                       <p>Comming soon....dd</p> 
+            </div>   --> 
+          <!--  <md-checkbox ng-model="disableInkBar">Disable Ink Bar</md-checkbox>
+            
+            <md-checkbox ng-model="secondTabDisabled" aria-label="Disable Second Tab" style="margin: 5px;">
+                Disable Second Tab
+            </md-checkbox> -->
+        
 
-  <!-- Angular Material Library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
-  <script src="app/js/main.js"></script>
-  <!-- Your application bootstrap  -->
- <!-- <script type="text/javascript">    
+           
+    </md-content>
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+    <script src="app/js/main.js"></script>
+    <!-- Your application bootstrap  -->
+    <!-- <script type="text/javascript">    
     /**
      * You must include the dependency on 'ngMaterial' 
      */
     angular.module('BlankApp', ['ngMaterial', 'ngMessages']);
   </script> -->
-   <script type="text/javascript">
+    <script type="text/javascript">
   //     var app = angular.module('SplashApp', ['ngMaterial', 'ngMessages']);
 
 
 
-   </script>
+    </script>
 </body>
+
 </html>
 
 <!--
