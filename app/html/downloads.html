@@ -4,7 +4,7 @@
 
     <li ng-repeat="item in jsonData.pagesContent.downloads.applications"> 
     <span> <strong>{{item.name}}</strong> &nbsp&nbsp&nbsp<i>{{item.date}}</i>
-      <md-button class="md-primary" md-colors="{color:'accent-500',background: 'orange-300-0.15'}"  download="{{item.name+'_v'+item.version}}" ng-href="{{item.link}}" target="_blank"> {{item.id}} {{item.version}} {{item.type}}
+      <md-button class="md-primary" md-colors="{color:'accent-500',background: 'orange-300-0.15'}"  download="{{item.name+'_v'+item.version}}.zip" ng-href="{{item.link}}" target="_blank"> {{item.id}} {{item.version}} {{item.type}}
         <md-icon md-colors="{color:'accent-600'}" md-font-icon="vertical_align_bottom">vertical_align_bottom</md-icon>
     </md-button>
   </span>
