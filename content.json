@@ -24,8 +24,8 @@
              "version":"2.0.0",
              "description":"Everything in one zip",
              "type":"zip",
-             "link":"https://splashti.github.io/splashTI2/files/SplashTI.txt"
-            /* "link":"files/SplashTI.txt"*/
+             "link":"https://splashti.github.io/splashTI2/files/SplashTI.txt",
+             "link2":"files/SplashTI.txt"
             }
        ]
    }
