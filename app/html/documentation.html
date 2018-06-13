@@ -6,30 +6,25 @@
         <h2>Installation</h2>
         <br/>
         <p >
-       
             <div>
-                Download and unzip the application in TM1 Server folder. Copy over <strong>ssl</strong> folder from TM1 installaton directory (for exam ple:<i>C:/Program Files/ibm/cognos/tm1_64/bin64/ssl</i>). 
-                Copy <strong>TM1JavaApi.jar</strong> into <strong>..\splashTI2\lib</strong> folder form TM1 installation directory (for example: <i>C:/Program Files/ibm/cognos/tm1_64/bin/classes/TM1JavaApi.jar</i>). 
+                Download and unzip the application into TM1 Server folder. Copy <strong>ssl</strong> folder content from TM1 installaton directory (for example:<i>C:/Program Files/ibm/cognos/tm1_64/bin64/ssl</i>) to <strong>../splashTI/ssl</strong>. 
+                Copy <strong>TM1JavaApi.jar</strong> into <strong>../splashTI/lib</strong> folder from TM1 installation directory (for example: <i>C:/Program Files/ibm/cognos/tm1_64/bin/classes/TM1JavaApi.jar</i>). 
                 <i>Be aware: To be able execute .exe files it's required to set up Java Environment Variables.</i>
             </div>
             <div flex>
                 <div layout="column" layout-align="center center" >
                  <img ng-src="img/splashti2_folder_structure.png" class="md-card-image imgclass" style="max-width:100%;padding-top:5px"  alt="SplashTI2 folder structure">
                 </div>
-
             </div>
-        
         </p>
     </div>
 </md-list-item>
-
 <md-list-item class="md-2-line md-long-text"  flex-gt-md=50 flex layout-allign="stretch" style="margin-bottom:20px">
         <!--  <img ng-src="{{todos[0].feace}}?25" class="md-avatar" alt="{{todos[0].who}}" /> -->
         <div class="md-list-item-text"> 
             <h2>Configuration</h2>
             <br/>
-            <p >
-              
+            <p>
                 <div>
                     Change log folder if it's required. Specify configuration for password encryption: password and vector. 
                     For both (for password and for vector) it must be 16digit string. Numbers and alphabet characters are allowed only. 
@@ -75,9 +70,7 @@
                             <div layout="row" layout-align="stretch" >
                              <img ng-src="img/splashti2_encrypt_cmd.png" class="md-card-image imgclass" style="max-width:100%" alt="SplashTI2 folder structure">
                             </div>
-            
                         </div>
-                             
                     </p>                
             </div>
         </md-list-item>
@@ -94,7 +87,7 @@
                              SplashTI2 process line syntax is similar to TM1RunTI syntax.  <strong>-pwdencrypted "Y"</strong> is a SplashTI2
                              parameter, which allows to use encrypted password. Don't be confused by specifying TM1RunTI.exe as a first process line parameter, it would be ignored anyway.
                              It's done in order to make transition from TM1RunTI to SpashTI2 easier, and basicaly you can specify any string instead of "C:\Program Files\ibm\cognos\tm1_64\bin64\tm1runti.exe".
-                             <br/>
+                            <br/>
                             <ol></ol><strong>CAM Security example:</strong></ol>
                             <cmd-code cmdline='"C:\Program Files\ibm\cognos\tm1_64\bin64\tm1runti.exe" -process SalesCube.CopyVersionByMonth pMonth=Jan -adminhost localhost -server Test -user SomeCAMUserID -pwd DTEL0AwOTg81C9CgBVdkbg== -pwdencrypted "Y" -CAMNamespace "CognosEx"'></cmd-code>
                            <!-- <ol><code>"C:\Program Files\ibm\cognos\tm1_64\bin64\tm1runti.exe" -process SalesCube.CopyVersionByMonth pMonth=Jan -adminhost localhost -server Test -user SomeCAMUserID -pwd DTEL0AwOTg81C9CgBVdkbg== -pwdencrypted "Y" -CAMNamespace "CognosEx"</code></ol> -->
