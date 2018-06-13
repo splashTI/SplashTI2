@@ -1,0 +1,79 @@
+
+<!--<h1 md-colors="{color:'accent-700'}">
+    <span>
+      
+        <strong>{{jsonData.pagesContent.home.title}}</strong>
+    </span>
+</h1>
+<h4 md-colors="{color:'primary-400'}" class="md-accent"> {{jsonData.application.description}}</h4>
+
+<p>
+    {{jsonData.application.name}}
+</p>
+-->
+
+  <!--<md-icon md-font-icon="settings">settings</md-icon>-->
+
+<!-- card -->
+<!--<md-card>
+        <img ng-src="img/tm1top_screenshot.jpg" class="md-card-image" alt="TM1Top screenshot">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Action buttons</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+          <p>
+            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+          </p>
+          <p>
+            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+          </p>
+          <p>
+            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+          </p>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button>Action 1</md-button>
+          <md-button>Action 2</md-button>
+        </md-card-actions>
+      </md-card> -->
+
+      <md-card style="padding:0px;margin:0px" md-colors="{color: 'primary',background: 'orange-100-0.15'}">
+            <md-card-header>
+              <md-card-avatar>
+                <img src="img/SplashTI2_icon.png"/>
+              </md-card-avatar>
+              <md-card-header-text>
+                <span class="md-title" ><Strong md-colors="{color:'accent-700'}">{{jsonData.pagesContent.home.title}}</Strong></span>
+                <span class="md-subhead" md-colors="{color:'accent-300'}"> {{jsonData.application.description}} </span>
+                  
+            </md-card-header-text>
+             
+            </md-card-header>
+            <img ng-src="img/tm1top_screenshot.png" class="md-card-image" alt="TM1Top Screenshot">
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">SplashTI2</span>
+              </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                    <p ng-bind-html="trustedHtml(jsonData.pagesContent.home.cardDesc)"></p>
+                   <!-- <p>SplashTI2 is a java application for running TM1 TI processes concurently. SplashTI has a similar syntax as <a href="https://www.ibm.com/support/knowledgecenter/en/SS9RXT_10.1.0/com.ibm.swg.ba.cognos.tm1_turb.10.1.0.doc/c_tm1_op_tm1runtisyntax.html">TM1RunTI</a>, but It does not have a dependency on TM1RunTI. It has depandency on TM1JavaAPI, but it's not necessary to install a java on TM1 Admin Server, becase it can be simply run by using java in TM1 installation directory.</p>-->
+            </md-card-content>
+          </md-card>
+          
+
+
+
+
+
+
+
+
+
+
+

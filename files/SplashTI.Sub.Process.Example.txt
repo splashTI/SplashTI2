@@ -1,0 +1,104 @@
+###################################################
+## Variables
+####################################################
+vVersion
+          String
+vMonth
+            String
+vRegion
+           String
+vModelType
+        String
+vModelSubType     String
+
+vModel
+            String
+vMeasure
+vValue    Number
+
+###################################################
+## Parameters
+####################################################
+pMonth         String      Jul      Month
+
+###################################################
+### Prolog
+###################################################
+
+cVersionTgt = 'Forecast';
+cVersionTgt = 'Budget';
+
+
+cCubSrc = 'SalesCubeByType';
+cCubTgt = 'SalesCubeByType';
+
+cCubParam = 	'Settings';
+sTimeStamp = 	TimSt( Now, '\Y\m\d\h\i\s' );
+sRandomInt = 	NumberToString( INT( RAND() * 1000 ));
+sThisProcName =       GetProcessName();
+
+cViewSrcPrefix =         'src_';
+cViewTgtPrefix =         'tgt_';
+cViewSrc = 	cViewSrcPrefix | sThisProcName |'_'| sTimeStamp |'_'| sRandomInt;
+cViewTgt = 	cViewTgtPrefix | sThisProcName |'_'| sTimeStamp |'_'| sRandomInt;
+cSubSrc = 	cViewSrc;
+cSubTgt = 	cViewTgt;
+
+
+
+##Source
+####################################
+IF(ViewExists(cCubSrc, cViewSrc)=1);
+  ViewDestroy(cCubSrc, cViewSrc);
+ENDIF;
+
+ViewCreate(cCubSrc, cViewSrc);
+
+sDim ='actvsbud';
+sEl = 'Actual';
+SubsetCreate(sDim, cSubSrc);
+SubsetElementInsert(sDim, cSubSrc, sEl, 1);
+ViewSubsetAssign(cCubSrc, cViewSrc, sDim, cSubSrc);
+
+
+IF(pMonth@<>'');
+sDim ='month';
+SubsetCreate(sDim, cSubSrc);
+sEl = pMonth;
+SubsetElementInsert(sDim, cSubSrc, sEl,1);
+ ViewSubsetAssign(cCubSrc, cViewSrc, sDim, cSubSrc);
+ENDIF;
+
+ViewExtractSkipCalcsSet(cCubSrc, cViewSrc, 1);
+ViewExtractSkipRuleValuesSet(cCubSrc, cViewSrc, 1);
+ViewExtractSkipZeroesSet(cCubSrc, cViewSrc, 1);
+
+##############################
+## Cube View
+DataSourceType = 'VIEW';
+DatasourceNameForServer = cCubSrc;
+DatasourceNameForClient = cCubSrc;
+DatasourceCubeView = cViewSrc;
+
+
+###################################################
+### Data
+###################################################
+
+CellPutN( vValue, cCubTgt,  cVersionTgt, vMonth, vRegion, vModelType, vModelSubType, vModel, vMeasure);
+
+###################################################
+### Epilog
+###################################################
+
+
+sJavaPath = 'C:\Program Files\ibm\cognos\tm1_64\bin64\jre\7.0\bin\java.exe';
+sID='';
+IF(pID@<>'');
+  sID =  ' '| pID;
+ENDIF;
+sCommand = sJavaPath | ' -jar "C:\TM1Models\Test\SplashTI\SplashTI2.jar" "' | cBatchFile | '" '| sCoreNum | sID;
+
+TextOutput('C:\TM1Models\Test\SplashTI\batch\SplashTICommand.txt', sCommand);
+ExecuteCommand(sCommand, 0);
+

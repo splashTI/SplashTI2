@@ -1,0 +1,48 @@
+*{
+  margin:0;
+  padding:0
+}
+.spacer {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+img .imgclass{
+    width: 100%;
+    height: auto;
+}
+
+pre, code {
+    font-family: monospace, monospace;
+  }
+  pre {
+    overflow: auto;
+    padding:0;
+    margin:0;
+  }
+  pre > code {
+    display: block;
+    padding: -5px;
+    margin:-5px;
+    word-wrap: normal;
+  }
+
+  pre, code{
+    direction: ltr;
+    text-align: left;
+  }
+  pre {border: solid 0px blue;
+    font-size: 1 em; 
+     color: blue; 
+    margin: -1px; 
+    padding:-1px; 
+  /*  background: #FFFFB3 */
+  }
+  code {font-size:1em; 
+    color: #008099}
+
+    .navBardemoBasicUsage md-content .ext-content {
+      padding: 50px;
+      margin: 20px;
+      background-color: #FFF2E0; }

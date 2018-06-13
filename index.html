@@ -5,30 +5,31 @@
     <title>SplashTI2</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="css/stylesheet.css"></link>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
         
-        .navBardemoBasicUsage md-content .ext-content {
-        padding: 50px;
-        margin: 20px;
-        background-color: #FFF2E0; }
+
     </style>
 </head>
 
-<body ng-app="SplashApp" ng-cloak>
+<body ng-app="SplashApp" layout="column" layout-fill ng-cloak  ng-controller="MainController">
     <!--
     Your HTML content here
   -->
     <!-- TEST {{1+1}} -->
-    <md-content class="md-padding" ng-controller="MainController" md-colors="{color: 'primary',background: 'orange-100-0.05'}" layout-fill>
+    <main flex>
+    <md-content style="margin:0px;padding:0" class="md-padding" md-colors="{color: 'primary',background: 'orange-100-0.05'}" layout-fill>
             <md-nav-bar md-no-ink-bar="disableInkBar" md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-                <md-nav-item md-nav-click="goto('Home')" name="Home">Home</md-nav-item>
+                <md-nav-item md-nav-click="goto('Home')" name="Home" id="home">Home</md-nav-item>
             <!-- <md-nav-item md-nav-click="goto('page2')" name="page2" ng-disabled="secondTabDisabled">
                     Page Two
                 </md-nav-item>  -->
-                <md-nav-item md-nav-click="goto('Documentation')" name="Documentation" ng-disabled="true">Documentation</md-nav-item>
-                <md-nav-item md-nav-click="goto('Downloads')" name="Downloads" ng-disabled="true"> Downloads </md-nav-item>
+
+                
+                <md-nav-item md-nav-click="goto('Documentation')" name="Documentation" ng-disabled="true" id="documentation">Documentation</md-nav-item>
+                <md-nav-item md-nav-click="goto('Downloads')" name="Downloads" ng-disabled="true" id="downloads"> Downloads </md-nav-item>
 
                 <!-- these require actual routing with ui-router or ng-route, so they
                         won't work in the demo
@@ -41,13 +42,16 @@
                         -->
             </md-nav-bar>
            <!-- <span>{{status}}</span> -->
-            <div class="ext-content" ng-show="currentNavItem=='Home'">
-             <!--  External content for 
-               <span>{{currentNavItem}}</span> -->
-                <h1 md-colors="{color:'accent-700'}"><span><!--<md-icon md-font-icon="settings">settings</md-icon>--><strong>SplashTI2</strong></span></h1>
-                <h4 md-colors="{color:'primary-400'}" class="md-accent">Application for running TI processes concurently</h4>
-                <p>Comming soon....</p> 
+           <!-- <div class="ext-content" ng-show="currentNavItem=='Home'">
+                <ng-include src="'app/html/home.html'"></ng-include>
+            </div> -->
+            <div ng-repeat="page in data.content.data.pages" style="margin:10px">
+                 <div ng-if="currentNavItem==page.name">
+                        <ng-include src="page.link"></ng-include>
+                 </div>    
             </div>
+
+
           <!--  <div class="ext-content" ng-show="currentNavItem=='Documentation">    
                     <p>Comming soon....d</p> 
             </div>    -->
@@ -60,9 +64,23 @@
                 Disable Second Tab
             </md-checkbox> -->
         
-
-           
+        
     </md-content>
+   </main>
+    <footer>
+            <md-toolbar class="md-scroll-shrink" md-colors="{color: 'primary',background: 'orange-100-0.06'}">
+              <div layout="row" layout-align="center center" flex>
+                <a style="font-size:10px">Code licensed under the Apachi 2.0. Contacts: Splashti2@gmail.com</a>
+              </div>
+            </md-toolbar>
+    </footer>
+    
+   <!-- <md-toolbar color='primary'>
+            <span class='spacer'></span>
+              <h3>© Copyright Angular Apps 2017.</h3>
+            <span class='spacer'></span>
+          </md-toolbar> -->
+      
     <!-- Angular Material requires Angular.js Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
