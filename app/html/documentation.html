@@ -7,9 +7,9 @@
         <br/>
         <p >
             <div>
-                Download and unzip the application into TM1 Server folder. Copy <strong>ssl</strong> folder content from TM1 installaton directory (for example:<i>C:/Program Files/ibm/cognos/tm1_64/bin64/ssl</i>) to <strong>../splashTI/ssl</strong>. 
-                Copy <strong>TM1JavaApi.jar</strong> into <strong>../splashTI/lib</strong> folder from TM1 installation directory (for example: <i>C:/Program Files/ibm/cognos/tm1_64/bin/classes/TM1JavaApi.jar</i>). 
-                <i>Be aware: To be able execute .exe files it's required to set up Java Environment Variables.</i>
+                Download and unzip the application into TM1 Server folder. Copy <strong>ssl</strong> folder content from TM1 installaton directory (<i>C:/Program Files/ibm/cognos/tm1_64/bin64/ssl</i>) to <strong>../splashTI/ssl</strong>. 
+                Copy <strong>TM1JavaApi.jar</strong> into <strong>../splashTI/lib</strong> folder from TM1 installation directory (<i>C:/Program Files/ibm/cognos/tm1_64/bin/classes/TM1JavaApi.jar</i> ). 
+                <i>Be aware: to be able execute .exe files it's required to set up Java Environment Variables.</i>
             </div>
             <div flex>
                 <div layout="column" layout-align="center center" >
@@ -107,7 +107,7 @@
                             <div> 
                                 Secondly, run SplashT2 from command line. <strong>Threads Number </strong> is an optional parameter. Accepted Integer numbers. 
                                 If Threads Number is negative or zero, SplashTI2 will use availiable logical processors + Thread Numbers. 
-                                So if Threads Numer = -1 and there are 12 logical processors on server, Splash TI will run batch file in 11 threads concurently.
+                                So if Threads Number = -1 and there are 12 logical processors on server, Splash TI will run a batch file in 11 threads concurently.
                                 <strong>Run ID</strong> is an optional parameter, which can be used after as argument for SplashTImanager.
                                 <!--<ol><code>java.exe -jar "C:\TM1Models\Test\SplashTI\SplashTI2.jar"
                                     </code></ol> -->
@@ -151,7 +151,7 @@
                        
                             <div> 
                                 SplashTImanager is an application for stopping SplasTI2 procesess execution. Run ID should be unique, otherwise clean <strong>tmp</strong> folder.
-                                Be aware - to be able use .exe file it's required to set up Environment variables for Java.
+                                Be Aware: to be able use .exe file it's required to set up Environment variables for Java.
                                 <ol>Execute: <i>SplashTImanager <strong>Run Id</strong> stop</i></ol>
                                <!-- <ol><code>java.exe -jar "C:\TM1Models\Test\SplashTI\SplashTImanager.jar" id02 stop</code></ol> -->
                                 <cmd-code cmdline='java.exe -jar "C:\TM1Models\Test\SplashTI\SplashTImanager.jar" id02 stop'></cmd-code>
