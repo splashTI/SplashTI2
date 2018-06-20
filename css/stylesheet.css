@@ -13,6 +13,7 @@ img .imgclass{
     height: auto;
 }
 
+/*
 pre, code {
     font-family: monospace, monospace;
   }
@@ -37,8 +38,9 @@ pre, code {
      color: blue; 
     margin: -1px; 
     padding:-1px; 
-  /*  background: #FFFFB3 */
+    background: #FFFFB3;
   }
+  */
   code {font-size:1em; 
     color: #008099}
 
@@ -46,3 +48,21 @@ pre, code {
       padding: 50px;
       margin: 20px;
       background-color: #FFF2E0; }
+
+      pre {
+        background: #f4f4f4;
+        border: 1px solid #ddd;
+        border-left: 3px solid #f36d33;
+        color: #666;
+        page-break-inside: avoid;
+        font-family: monospace;
+        font-size: 15px;
+        line-height: 1.6;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+        max-width: 100%;
+        overflow: auto;
+        padding: 1.5em 0.1em 0.1em;
+        display: block;
+        word-wrap: break-word;
+    }      
