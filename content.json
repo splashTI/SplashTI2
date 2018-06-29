@@ -12,7 +12,7 @@
  "pagesContent":{
    "home":{
         "title":"SplashTI2",
-        "cardDesc":"SplashTI2 is a free java application for running TM1 TI processes concurently. It has a similar syntax to <a href='https://www.ibm.com/support/knowledgecenter/en/SS9RXT_10.1.0/com.ibm.swg.ba.cognos.tm1_turb.10.1.0.doc/c_tm1_op_tm1runtisyntax.html'>TM1RunTI</a>, but SplashTI2 does not have a dependency on TM1RunTI. It utilizes TM1JavaAPI library. But it's not necessary to install a java on TM1 Admin Server, because it can be simply run by using java from TM1 installation directory."
+        "cardDesc":"SplashTI2 is a free java application for running TM1 TI processes concurrently. It has a similar syntax to <a href='https://www.ibm.com/support/knowledgecenter/en/SS9RXT_10.1.0/com.ibm.swg.ba.cognos.tm1_turb.10.1.0.doc/c_tm1_op_tm1runtisyntax.html'>TM1RunTI</a>, but SplashTI2 does not have a dependency on TM1RunTI. It utilizes TM1JavaAPI library. But it's not necessary to install a java on TM1 Admin Server, because it can be simply run by using java from TM1 installation directory."
    },
    "documentation":"doc",
    "downloads":{
