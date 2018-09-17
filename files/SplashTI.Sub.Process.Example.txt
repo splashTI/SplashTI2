@@ -91,14 +91,3 @@ CellPutN( vValue, cCubTgt,  cVersionTgt, vMonth, vRegion, vModelType, vModelSubT
 ### Epilog
 ###################################################
 
-
-sJavaPath = 'C:\Program Files\ibm\cognos\tm1_64\bin64\jre\7.0\bin\java.exe';
-sID='';
-IF(pID@<>'');
-  sID =  ' '| pID;
-ENDIF;
-sCommand = sJavaPath | ' -jar "C:\TM1Models\Test\SplashTI\SplashTI2.jar" "' | cBatchFile | '" '| sCoreNum | sID;
-
-TextOutput('C:\TM1Models\Test\SplashTI\batch\SplashTICommand.txt', sCommand);
-ExecuteCommand(sCommand, 0);
-
