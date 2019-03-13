@@ -32,10 +32,9 @@ app.directive('cmdCode', function(){
     };
   });
 
-app.controller('MainController',['$scope', '$mdTheming', 'appData', '$sce', function($scope,$mdTheming,appData,$sce){ 
+app.controller('MainController',['$scope', '$mdTheming', 'appData', '$sce', '$document', function($scope,$mdTheming,appData,$sce,$document){ 
 //app.controller('MainController',['$scope', '$mdTheming',  function($scope,$mdTheming){
-    $scope.message = "Test";
-    console.log("test test test....");
+    $scope.msie  = $document[0].documentMode;
     $mdTheming.generateTheme('default');
   /* appData.get().then(function(response){
        $scope.data = response;
