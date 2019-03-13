@@ -36,26 +36,6 @@ app.controller('MainController',['$scope', '$mdTheming', 'appData', '$sce', '$do
 //app.controller('MainController',['$scope', '$mdTheming',  function($scope,$mdTheming){
     $scope.msie  = $document[0].documentMode;
 	
-	function createDownloadLink(anchorSelector, str, fileName){
-		if(window.navigator.msSaveOrOpenBlob) {
-			var fileData = [str];
-			blobObject = new Blob(fileData);
-			$(anchorSelector).click(function(){
-				window.navigator.msSaveOrOpenBlob(blobObject, fileName);
-				window.navigator.msSaveOrOpenBlob(blobObject, fileName);
-			});
-		} else {
-			var url = "data:text/plain;charset=utf-8," + encodeURIComponent(str);
-			$(anchorSelector).attr("download", fileName);
-			$(anchorSelector).attr("href", url);
-		}
-	}
-
-	$(function () {
-		var str = "SplashTI2";
-		createDownloadLink("#export", str, "files/SplashTI2.txt");
-	});
-		
     $mdTheming.generateTheme('default');
   /* appData.get().then(function(response){
        $scope.data = response;
